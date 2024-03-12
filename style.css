@@ -4,11 +4,11 @@
 	box-sizing: border-box;
 }
 :root{
-	--blue:#1c19e4;
-	--pink:#b81edb;
+	--blue:#808080;
+	--pink:#D3D3D3;
 	--text:#fbfbfb;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body {
 	font-family: "Poppins", sans-serif;
 	background: linear-gradient(90deg,var(--blue)
@@ -21,4 +21,162 @@ a,
 li {
 	text-decoration: none;
 	list-style: none;
+	color: var(--text);
+}
+
+/* container */
+.container {
+	position: relative;
+	max-width: 1440px;
+	height: 80vh;
+	background: rgba(255, 255, 255, 0.15);
+	margin: auto;
+	margin-top: 10vh;
+	border-radius: 10px;
+	box-shadow: 10px 10px 25px 2px #111;
+	animation: fadeIn 4s ease-out;
+}
+.background-image {
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('1.jpg'); /* Replace this with your image path */
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5 in this case) */
+  background-blend-mode: multiply; /* Adjust blending mode as needed */
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.container .content {
+  position: relative; /* Update this line */
+  padding: 2rem;
+  text-align: center;
+}
+@keyframes fadeIn {
+0% {
+	box-shadow: none;
+	background: rgba(255, 255, 255, 0.05);
+	color: rgba(255, 255, 255, 0.05);
+}
+100% {
+}
+}
+
+/* buttons*/
+.btn{
+	font-weight: 700;
+	color: var(--blue);
+	font-family: inherit;
+	background-color: var(--text);
+	border-color: var(--blue);
+	display: inline-block;
+	line-height: 1.5;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1px solid transparent;
+	padding: 0.375 0.75rem;
+	border-radius: 0.25rem;
+	transition: .3s ease;
+	box-shadow: 2px 2px 7px 1px #333;
+}
+.btn:hover{
+	background: rgba(255, 255, 255, 0.5);
+	transition: 0.3s ease;
+}
+.nav{
+	font-size: 1.4rem;
+	padding-top: 4rem;
+	padding-left: 6rem;
+	display: flex;
+	align-items: center;
+}
+.nav-links{
+	position: relative;
+	right: -400px;
+	display: flex;
+	align-items: center;
+}
+.nav-links.active{
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	height: 100%;
+	background: rgba(3, 3, 3, 0.7);
+	padding: 15vh 0;
+	font-size: 2rem;
+	z-index: 2;
+}
+.fa-bars.close {
+	display: none;
+}
+.fa-xmark.open {
+	display: flex;
+	position: relative;
+	justify-content: flex-end;
+	width: 100%;
+	margin-right: 4rem;
+	z-index: 2;
+}
+.nav-links li{
+	margin-left: 2rem;
+	
+}
+.nav-links li a:hover{
+	opacity: 0.5;
+}
+.nav-links .btn{
+	margin-left: 2rem;
+}
+.fa-bars,
+.fa-xmark{
+	cursor: pointer;
+	display: none;
+}
+/*header*/
+header {
+  position: relative;
+  margin-left: 6rem;
+  margin-top: 4rem;
+  max-width: 1000px;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+h4 {
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+p {
+  margin: 4rem 0;
+}
+/*Responsive*/
+@media (max-width: 1440px) {
+  .nav-links {
+    display: none;
+  }
+  .fa-bars {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h4 {
+    font-size: 2rem;
+  }
+  p {
+    margin: 2rem 0;
+  }
 }
